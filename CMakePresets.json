@@ -1,14 +1,6 @@
 ﻿{
     "version": 3,
   "configurePresets": [
-    {
-      "name": "vcpkg",
-      "generator": "Ninja",
-      "binaryDir": "${sourceDir}/build",
-      "cacheVariables": {
-        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
-      }
-    },
       {
         "name": "windows-base",
         "hidden": true,
@@ -17,7 +9,8 @@
         "installDir": "${sourceDir}/out/install/${presetName}",
         "cacheVariables": {
           "CMAKE_C_COMPILER": "cl.exe",
-          "CMAKE_CXX_COMPILER": "cl.exe"
+          "CMAKE_CXX_COMPILER": "cl.exe",
+          "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake"
         },
         "condition": {
           "type": "equals",
